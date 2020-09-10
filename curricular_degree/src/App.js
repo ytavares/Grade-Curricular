@@ -1,24 +1,24 @@
 import React from "react";
 import logo from "./logo.svg";
-import "./App.css";
+
 import firebase from "./firebase";
+import Header from "./components/Header"
+
 
 function createMateria() {
-  const data = {
-    name: "Programação",
-    nota: 7,
-  };
-  firebase.database().ref("materias/").set(data);
+    const data = {
+        name: "Programação 2",
+        nota: 7,
+    };
+    firebase.database().ref("materias").set(data);
 }
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <button onClick={(e) => createMateria()}>ENVIAR</button>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Header></Header>
+        </div>
+    );
 }
 
 export default App;
